@@ -13,14 +13,11 @@ public class MIP {
                 "addi $t, $t, 4",
                 "sw $t1, 4($t0)",
                 "beq $t0, $s5, Loop"
-
-
         };
 
         MIP m = new MIP();
         for (String s : line)
             m.exec(s);
-
     }
 
     MIP()
@@ -36,17 +33,17 @@ public class MIP {
 
         if (cmd.equals("addi"))
             addi(arg);
-        if (cmd.equals("beq"))
+       else if (cmd.equals("beq"))
             beq(arg);
-        if (cmd.equals("sw"))
+       else if (cmd.equals("sw"))
             sw(arg);
-        if (cmd.equals("bgez"))
+       else if (cmd.equals("bgez"))
             bgez(arg);
-        if (cmd.equals("bgez"))
+       else if (cmd.equals("bgez"))
             bgez(arg);
-        if (cmd.equals("blez"))
+       else if (cmd.equals("blez"))
             bgez(arg);
-        if (cmd.equals("bgtz"))
+       else if (cmd.equals("bgtz"))
             bgez(arg);
     }
 
@@ -56,7 +53,6 @@ public class MIP {
 
     public static void addi(String arg[]) {
         if (arg[1].equals(arg[2])) {
-
             int v = Integer.parseInt(arg[3]);
             if (v == 1)
                 System.out.print(arg[1] + "++");
@@ -64,8 +60,7 @@ public class MIP {
                 System.out.print(arg[1] + "--");
             else
                 System.out.print(arg[1] + " += " + arg[3]);
-        } else
-
+        } else 
             System.out.print("int " + arg[1] + " = " + arg[2] + " + " + arg[3]);
         pE();
     }
